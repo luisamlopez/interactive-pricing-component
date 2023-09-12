@@ -46,23 +46,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--very-pale-blue);
+  background-image: url("./assets/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
 }
 
 p {
   font-size: 15px;
-}
-
-/** Global */
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-/**Media Queries */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 48px;
-    max-width: 375px;
-  }
 }

@@ -1,5 +1,9 @@
 import { useState } from "react";
 import "./card.css";
+import SpecialSwitch from "./Switch";
+import { Slider } from "@mui/material";
+import sliderIcon from "../assets/icon-slider.svg";
+
 const Card = () => {
   const [pageViews, setPageViews] = useState(0);
   const [price, setPrice] = useState(0.0);
@@ -43,21 +47,41 @@ const Card = () => {
         </div>
       </div>
       <div className="slider">
-        <input
+        {/* <input
           type="range"
           min="0"
-          max="1000"
+          max="200"
           value={pageViews}
           onChange={handlePageViews}
+        /> */}
+        <Slider
+          aria-label="Volume"
+          value={pageViews}
+          onChange={handlePageViews}
+          max={200}
+          min={0}
+          sx={{
+            color: "#10d8c4",
+            "& .MuiSlider-thumb": {
+              width: "20px",
+              height: "20px",
+              backgroundColor: "#fff",
+              border: "none",
+              background: "#10d8c4",
+              backgroundImage: { sliderIcon },
+              cursor: "pointer",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "75%",
+              boxShadow: "-5px 5px 10px rgba(16, 213, 194, 0.5)",
+            },
+          }}
         />
       </div>
 
       <div className="toggle">
         <p>Monthly Billing</p>
-        <label className="switch">
-          <input type="checkbox" onClick={addDiscount} />
-          <span className="slider round"></span>
-        </label>
+        <SpecialSwitch onClick={addDiscount} />
         <p>Yearly Billing</p>
         <p className="discount">25% discount</p>
       </div>

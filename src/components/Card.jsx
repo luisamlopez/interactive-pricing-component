@@ -3,6 +3,7 @@ import "./card.css";
 import SpecialSwitch from "./Switch";
 import { Slider } from "@mui/material";
 import sliderIcon from "../assets/icon-slider.svg";
+import SpecialSlider from "./Slider";
 
 const Card = () => {
   const [pageViews, setPageViews] = useState(0);
@@ -54,7 +55,7 @@ const Card = () => {
           value={pageViews}
           onChange={handlePageViews}
         /> */}
-        <Slider
+        {/* <Slider
           aria-label="Volume"
           value={pageViews}
           onChange={handlePageViews}
@@ -76,7 +77,8 @@ const Card = () => {
               boxShadow: "-5px 5px 10px rgba(16, 213, 194, 0.5)",
             },
           }}
-        />
+        /> */}
+        <SpecialSlider onChange={handlePageViews} />
       </div>
 
       <div className="toggle">

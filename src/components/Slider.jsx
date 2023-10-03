@@ -41,10 +41,7 @@ export default function SpecialSlider({ onChange }) {
   return (
     <Pricing
       slots={{ thumb: PricingThumb }}
-      //   getAriaLabel={(index) =>
-      //     index === 0 ? "Minimum price" : "Maximum price"
-      //   }
-      //   defaultValue={[20, 40]}
+      min={10}
       max={200}
       onChange={onChange}
     />

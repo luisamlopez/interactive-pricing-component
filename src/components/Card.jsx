@@ -46,7 +46,9 @@ const Card = () => {
         <p>Monthly Billing</p>
         <SpecialSwitch onClick={addDiscount} />
         <p>Yearly Billing</p>
-        <p className="discount">25% discount</p>
+        <span className="discount">
+          <p>25% discount</p>
+        </span>
       </div>
 
       <div className="divider"></div>

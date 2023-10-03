@@ -58,35 +58,17 @@
   margin: 0;
 }
 
-.slider input {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 5px;
-  border-radius: 5px;
-  background: var(--light-grayish-blue);
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: 0.2s;
-  transition: opacity 0.2s;
-  /** Slider Thumb and add icon*/
+.toggle .discount {
+  background-color: hsl(15, 100%, 95%);
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 5px;
+}
 
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--strong-cyan);
-    cursor: pointer;
-    background-image: url("../assets/icon-slider.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 75%;
-    /**outter glow centered*/
-
-    box-shadow: -5px 5px 10px rgba(16, 213, 194, 0.5);
-  }
+.toggle .discount p {
+  color: var(--light-red);
+  margin: 0;
+  font-size: 10px;
 }
 
 .toggle {

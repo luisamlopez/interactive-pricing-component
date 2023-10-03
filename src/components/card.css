@@ -37,7 +37,7 @@
 }
 
 .priceNumber {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--dark-desaturated-blue);
   text-transform: uppercase;

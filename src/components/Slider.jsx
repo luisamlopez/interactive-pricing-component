@@ -45,6 +45,7 @@ export default function SpecialSlider({ onChange }) {
       //     index === 0 ? "Minimum price" : "Maximum price"
       //   }
       //   defaultValue={[20, 40]}
+      max={200}
       onChange={onChange}
     />
   );

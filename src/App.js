@@ -10,7 +10,11 @@ function App() {
 
       </div>
       <Card />
-      <p> Challenge by Frontend Mentor. Coded by Your Name Here.</p>
+      <div className='attribution'>
+        <p> Challenge by Frontend Mentor. </p>
+        Coded by <a href="https://github.com/luisamlopez">Luisa López</a>.
+
+      </div>
     </div>
   );
 }

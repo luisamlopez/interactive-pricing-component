@@ -6,12 +6,18 @@ import SpecialSlider from "./Slider";
 const Card = () => {
   const [pageViews, setPageViews] = useState(0);
   const [price, setPrice] = useState(0.0);
-  const [newPrice, setNewPrice] = useState(price - price * 0.25);
+  const [newPrice, setNewPrice] = useState(price);
   const [discount, setDiscount] = useState(false);
 
   const handlePageViews = (e) => {
     setPageViews(e.target.value);
     setPrice(e.target.value * 0.16);
+    let oldPrice = price;
+    if (!discount) {
+      setNewPrice(oldPrice + price * 0.25);
+    } else {
+      setNewPrice(oldPrice - price * 0.25);
+    }
   };
 
   const addDiscount = (e) => {

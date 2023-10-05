@@ -4,6 +4,7 @@ import SpecialSlider from "./Slider";
 import {
   Box,
   Button,
+  CardContent,
   List,
   ListItem,
   ListItemIcon,
@@ -54,7 +55,7 @@ const Card = () => {
   }, []);
 
   return (
-    <Box
+    <Card
       sx={{
         background: "var(--white)",
         borderRadius: " 10px",
@@ -71,240 +72,242 @@ const Card = () => {
         },
       }}
     >
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            sm: "row",
-          },
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "1rem",
-        }}
-      >
+      <CardContent>
         <Box
           sx={{
-            fontSize: "2rem",
-            fontWeight: 700,
-            color: "var(--grayish-blue)",
-            textTransform: "uppercase",
-            placeSelf: "left",
-            letterSpacing: "0.25rem",
+            display: "flex",
+            flexDirection: {
+              xs: "column",
+              sm: "row",
+            },
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "1rem",
           }}
         >
-          <Typography>{pageViews}K Pageviews</Typography>
+          <Box
+            sx={{
+              fontSize: "2rem",
+              fontWeight: 700,
+              color: "var(--grayish-blue)",
+              textTransform: "uppercase",
+              placeSelf: "left",
+              letterSpacing: "0.25rem",
+            }}
+          >
+            <Typography>{pageViews}K Pageviews</Typography>
+          </Box>
+          <Box
+            sx={{
+              display: {
+                xs: "block",
+                sm: "none",
+                width: "100%",
+              },
+            }}
+          >
+            <SpecialSlider onChange={handlePageViews} />
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
+              margin: 0,
+              height: "fit-content",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "3rem",
+                fontWeight: 700,
+                color: "var(--dark-desaturated-blue)",
+                textTransform: "uppercase",
+                placeSelf: "left",
+                margin: 0,
+                mr: "1rem",
+              }}
+            >
+              ${!discount ? price.toFixed(2) : newPrice.toFixed(2)}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontWeight: 700,
+                color: "var(--grayish-blue)",
+                placeSelf: "left",
+                marginBottom: "2rem",
+              }}
+            >
+              / month
+            </Typography>
+          </Box>
         </Box>
+
         <Box
           sx={{
             display: {
-              xs: "block",
-              sm: "none",
+              xs: "none",
+              sm: "block",
               width: "100%",
             },
           }}
         >
           <SpecialSlider onChange={handlePageViews} />
         </Box>
+
         <Box
           sx={{
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
-            justifyContent: "space-between",
-            margin: 0,
-            height: "fit-content",
-          }}
-        >
-          <Typography
-            sx={{
-              fontSize: "3rem",
-              fontWeight: 700,
-              color: "var(--dark-desaturated-blue)",
-              textTransform: "uppercase",
-              placeSelf: "left",
-              margin: 0,
-              mr: "1rem",
-            }}
-          >
-            ${!discount ? price.toFixed(2) : newPrice.toFixed(2)}
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              fontWeight: 700,
-              color: "var(--grayish-blue)",
-              placeSelf: "left",
-              marginBottom: "2rem",
-            }}
-          >
-            / month
-          </Typography>
-        </Box>
-      </Box>
-
-      <Box
-        sx={{
-          display: {
-            xs: "none",
-            sm: "block",
+            justifyContent: "center",
+            margin: "1rem",
+            gap: "0.5rem",
             width: "100%",
-          },
-        }}
-      >
-        <SpecialSlider onChange={handlePageViews} />
-      </Box>
-
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          margin: "1rem",
-          gap: "0.5rem",
-          width: "100%",
-        }}
-      >
-        <Typography
-          sx={{
-            color: "var(--grayish-blue)",
-            fontSize: "12px",
-            placeSelf: "center",
-          }}
-        >
-          Monthly Billing
-        </Typography>
-        <SpecialSwitch onClick={addDiscount} />
-        <Typography
-          sx={{
-            color: "var(--grayish-blue)",
-            fontSize: "12px",
-            placeSelf: "center",
-          }}
-        >
-          Yearly Billing
-        </Typography>
-        <Box
-          sx={{
-            backgroundColor: "hsl(15, 100%, 95%)",
-            borderRadius: "10px",
-            fontWeight: 700,
-            padding: "5px",
           }}
         >
           <Typography
             sx={{
-              color: "var(--light-red)",
-              margin: 0,
-              fontSize: "10px",
+              color: "var(--grayish-blue)",
+              fontSize: "12px",
+              placeSelf: "center",
             }}
           >
-            {windowWidth > 375 ? "25% discount" : "-25%"}
+            Monthly Billing
           </Typography>
+          <SpecialSwitch onClick={addDiscount} />
+          <Typography
+            sx={{
+              color: "var(--grayish-blue)",
+              fontSize: "12px",
+              placeSelf: "center",
+            }}
+          >
+            Yearly Billing
+          </Typography>
+          <Box
+            sx={{
+              backgroundColor: "hsl(15, 100%, 95%)",
+              borderRadius: "10px",
+              fontWeight: 700,
+              padding: "5px",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "var(--light-red)",
+                margin: 0,
+                fontSize: "10px",
+              }}
+            >
+              {windowWidth > 375 ? "25% discount" : "-25%"}
+            </Typography>
+          </Box>
         </Box>
-      </Box>
 
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: {
-            xs: "column",
-            sm: "row",
-          },
-          alignItems: {
-            xs: "center",
-            sm: "start",
-          },
-          justifyContent: "space-between",
-        }}
-      >
         <Box
           sx={{
-            fontSize: "12px",
-            color: "var(--grayish-blue)",
-            textAlign: {
-              xs: "center",
-              sm: "left",
+            display: "flex",
+            flexDirection: {
+              xs: "column",
+              sm: "row",
             },
+            alignItems: {
+              xs: "center",
+              sm: "start",
+            },
+            justifyContent: "space-between",
           }}
         >
-          <ul
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: {
+          <Box
+            sx={{
+              fontSize: "12px",
+              color: "var(--grayish-blue)",
+              textAlign: {
                 xs: "center",
                 sm: "left",
-                md: "left",
-                lg: "left",
               },
-              justifyContent: "space-between",
-              padding: 0,
             }}
           >
-            <li
+            <ul
               style={{
-                backgroundImage: `url(${checkIcon})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "left center",
-                paddingLeft: "1rem",
-                listStyle: "none",
-                marginBottom: "1rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: {
+                  xs: "center",
+                  sm: "left",
+                  md: "left",
+                  lg: "left",
+                },
+                justifyContent: "space-between",
+                padding: 0,
               }}
             >
-              Unlimited websites
-            </li>
-            <li
-              style={{
-                backgroundImage: `url(${checkIcon})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "left center",
-                paddingLeft: "1rem",
-                listStyle: "none",
-                marginBottom: "1rem",
-              }}
-            >
-              100% data ownership
-            </li>
-            <li
-              style={{
-                backgroundImage: `url(${checkIcon})`,
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "left center",
-                paddingLeft: "1rem",
-                listStyle: "none",
-                marginBottom: "1rem",
-              }}
-            >
-              Email reports
-            </li>
-          </ul>
-        </Box>
+              <li
+                style={{
+                  backgroundImage: `url(${checkIcon})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "left center",
+                  paddingLeft: "1rem",
+                  listStyle: "none",
+                  marginBottom: "1rem",
+                }}
+              >
+                Unlimited websites
+              </li>
+              <li
+                style={{
+                  backgroundImage: `url(${checkIcon})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "left center",
+                  paddingLeft: "1rem",
+                  listStyle: "none",
+                  marginBottom: "1rem",
+                }}
+              >
+                100% data ownership
+              </li>
+              <li
+                style={{
+                  backgroundImage: `url(${checkIcon})`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "left center",
+                  paddingLeft: "1rem",
+                  listStyle: "none",
+                  marginBottom: "1rem",
+                }}
+              >
+                Email reports
+              </li>
+            </ul>
+          </Box>
 
-        <Button
-          sx={{
-            backgroundColor: "var(--dark-desaturated-blue)",
-            color: "var(--grayish-blue)",
-            borderRadius: "25px",
-            border: "none",
-            padding: "1rem 3rem",
-            cursor: "pointer",
-            fontSize: "12px",
-            textTransform: "none",
-            height: "fit-content",
-            placeSelf: "center",
-            //on hover change font color to white
-            "&:hover": {
+          <Button
+            sx={{
               backgroundColor: "var(--dark-desaturated-blue)",
-              color: "var(--white)",
-            },
-          }}
-        >
-          Start my trial
-        </Button>
-      </Box>
-    </Box>
+              color: "var(--grayish-blue)",
+              borderRadius: "25px",
+              border: "none",
+              padding: "1rem 3rem",
+              cursor: "pointer",
+              fontSize: "12px",
+              textTransform: "none",
+              height: "fit-content",
+              placeSelf: "center",
+              //on hover change font color to white
+              "&:hover": {
+                backgroundColor: "var(--dark-desaturated-blue)",
+                color: "var(--white)",
+              },
+            }}
+          >
+            Start my trial
+          </Button>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 export default Card;

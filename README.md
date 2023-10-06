@@ -21,7 +21,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/luisamlopez/interactive-pricing-component)
-- [Live Site URL](https://interactive-pricing-component-sjlc.onrender.com)
+- [Live Site URL](https://interactive-pricing-componentfm.netlify.app/)
 
 ## My process
 

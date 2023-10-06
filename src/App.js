@@ -1,5 +1,5 @@
 import './App.css';
-import Card from './components/Card';
+import PricingComponent from './components/PricingComponent';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <p>Sign-up for our 30-day trial. No credit card required. </p>
 
       </div>
-      <Card />
+      <PricingComponent />
       <div className='attribution'>
         <p> Challenge by Frontend Mentor. </p>
         Coded by <a href="https://github.com/luisamlopez">Luisa López</a>.

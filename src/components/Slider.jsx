@@ -38,11 +38,29 @@ function PricingThumb(props) {
 }
 
 export default function SpecialSlider({ onChange }) {
+  const marks = [
+    {
+      value: 10,
+    },
+    { value: 50 },
+    {
+      value: 100,
+    },
+    {
+      value: 500,
+    },
+    {
+      value: 1000,
+    },
+  ];
   return (
     <Pricing
       slots={{ thumb: PricingThumb }}
       min={10}
-      max={200}
+      max={1000}
+      marks={marks}
+      defaultValue={100}
+      step={null}
       onChange={onChange}
     />
   );
